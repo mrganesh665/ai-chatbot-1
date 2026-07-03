@@ -78,15 +78,4 @@ if st.button("Extract Information"):
 
     st.subheader("Movie Information")
 
-    st.write(f"**Title:** {movie_data.title}")
-    st.write(f"**Release Year:** {movie_data.release_year}")
-    st.write(f"**Genre:** {', '.join(movie_data.genre)}")
-    st.write(f"**Director:** {movie_data.director}")
-    st.write(f"**Rating:** {movie_data.rating}")
-
-    st.write("**Cast:**")
-    for actor in movie_data.cast:
-        st.write(f"- {actor}")
-
-    st.write("**Summary:**")
-    st.write(movie_data.summary)
+    st.json(movie_data.model_dump())
